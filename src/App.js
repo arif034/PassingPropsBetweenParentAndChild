@@ -1,10 +1,19 @@
+import React, { Component } from "react";
+import { render } from "react-dom";
 import "./styles.css";
+import Child from "./Child.js";
 
-export default function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { message: "I am Groot" };
+  }
+  render() {
+    return (
+      <div className="App">
+        <Child value={this.state.message} />
+      </div>
+    );
+  }
 }
+export default App;
